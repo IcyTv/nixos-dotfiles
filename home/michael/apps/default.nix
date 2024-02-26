@@ -7,6 +7,7 @@
     ./fzf.nix
     ./git.nix
     ./thunar.nix
+    ./github.nix
   ];
 
   home.packages = with pkgs; [
