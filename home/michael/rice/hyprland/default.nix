@@ -46,6 +46,7 @@ in
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$browser" = "firefox";
+      "$fileManager" = "thunar";
       "$run" = "wofi";
 
       exec-once = [
@@ -67,6 +68,7 @@ in
         "$mainMod, B, exec, $browser"
         "$mainMod, SPACE, exec, $run"
         "$mainMod, R, exec, $run"
+        "$mainMod, E, exec, $fileManager"
       ];
 
       bindm = [
