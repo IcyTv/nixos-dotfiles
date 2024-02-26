@@ -16,5 +16,6 @@
     pavucontrol
     dunst
     polkit_gnome
+    pkgs.xfce.thunar
   ];
 }
