@@ -6,6 +6,7 @@
     ./spotify.nix
     ./fzf.nix
     ./git.nix
+    ./thunar.nix
   ];
 
   home.packages = with pkgs; [
@@ -16,6 +17,5 @@
     pavucontrol
     dunst
     polkit_gnome
-    pkgs.xfce.thunar
   ];
 }
