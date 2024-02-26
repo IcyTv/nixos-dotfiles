@@ -6,7 +6,6 @@
     ./spotify.nix
     ./fzf.nix
     ./git.nix
-    ./gnupg.nix
   ];
 
   home.packages = with pkgs; [
