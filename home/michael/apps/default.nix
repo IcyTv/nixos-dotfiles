@@ -18,5 +18,6 @@
     pavucontrol
     dunst
     polkit_gnome
+    sbctl
   ];
 }
