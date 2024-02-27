@@ -32,10 +32,6 @@ let
 
 in
 {
-  imports = [
-    ./chrome.nix
-  ];
-
   programs.firefox = {
     enable = true;
     package = pkgs.firefox.override {
@@ -102,10 +98,6 @@ in
           ycs
           pinned-gmail
         ];
-
-        settings = {
-          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        };
       };
 
       yes = {
