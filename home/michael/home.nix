@@ -20,6 +20,7 @@
     config = {
       allowUnfree = true;
     };
+    overlays = [ inputs.rust-overlay.overlays.default ];
   };
 
   fonts.fontconfig.enable = true;

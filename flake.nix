@@ -32,6 +32,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   outputs =
@@ -43,6 +45,7 @@
     , flake-parts
     , spicetify-nix
     , lanzaboote
+    , rust-overlay
     , ...
     }@inputs: {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
