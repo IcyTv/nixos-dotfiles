@@ -48,7 +48,7 @@
     enable = true;
     config = {
       pager = "less -FR";
-      theme = "Catppuccin-mocha";
+      theme = "Catppuccin-macchiato";
     };
     themes = let
       src = pkgs.fetchFromGitHub {
