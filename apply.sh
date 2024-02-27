@@ -4,7 +4,7 @@ set -e
 
 pushd ~/system-flake
 
-git diff -U0 *.nix
+git diff
 git add .
 sudo nixos-rebuild switch --flake $PWD
 gen=$(nixos-rebuild list-generations | grep current | awk '{print $1}')

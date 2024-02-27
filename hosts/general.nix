@@ -76,6 +76,11 @@
     lanzaboote = {
       enable = true;
       pkiBundle = "/etc/secureboot";
+      settings = {
+        beep = true;
+        default = "@saved";
+        timeout = 10;
+      };
     };
   };
 
