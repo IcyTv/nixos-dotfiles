@@ -5,6 +5,7 @@
       catppuccin.catppuccin-vsc
       bbenoist.nix
       jnoortheen.nix-ide
+      mkhl.direnv
     ];
 
     userSettings = {
