@@ -27,7 +27,7 @@ in
       dunst &
 
       # Cursor
-      hyprctl setcursor "macOS-BigSur" 32 # "Catppuccin-Mocha-Mauve-Cursors"
+      hyprctl setcursor "macOS-BigSur" 24 # "Catppuccin-Mocha-Mauve-Cursors"
 
       # Others
       /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
