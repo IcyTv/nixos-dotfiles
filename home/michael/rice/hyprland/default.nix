@@ -131,6 +131,7 @@ in
         "__GLX_VENDOR_LIBRARY_NAME, nvidia"
         "WLR_NO_HARDWARE_CURSORS, 1"
         "XCURSOR_SIZE,24"
+        "NIXOS_OZONE_WL,1"
       ];
 
       bind = [
