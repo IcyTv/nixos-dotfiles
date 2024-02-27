@@ -19,5 +19,6 @@
     dunst
     polkit_gnome
     sbctl
+    wl-clipboard
   ];
 }
