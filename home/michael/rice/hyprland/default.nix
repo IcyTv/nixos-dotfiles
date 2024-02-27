@@ -159,15 +159,15 @@ in
         builtins.concatLists (builtins.genList (
           x: let
             ws = let
-              c = (x + 1) / 12;
+              c = (x + 1) / 10;
             in
-              builtins.toString (x + 1 - (c * 12));
+              builtins.toString (x + 1 - (c * 10));
           in [
             "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
             "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
           ]
         )
-        12)
+        10)
       );
 
       bindm = [
