@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     ./general.nix
     ../hardware-configuration.nix
@@ -10,4 +10,6 @@
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+
+  hardware.opengl.extraPackages = [ pkgs.libvdpau-va-gl ];
 }
