@@ -204,4 +204,6 @@ in
     # "hypr/scripts/tools/start_dyn".source = ./scripts/tools/start_dyn;
   };
 
+  home.sessionVariables.NIXOS_OZONE_WL = 1;
+
 }

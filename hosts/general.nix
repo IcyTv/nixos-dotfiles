@@ -183,6 +183,7 @@
     etc."xdg/user-dirs.defaults".source = etc/user-dirs.defaults;
 
     variables.EDITOR = "nvim";
+    sessionVariables.NIXOS_OZONE_WL = "1";
 
     # this enabled `$ man alias`
     systemPackages = with pkgs; [ 
