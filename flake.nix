@@ -34,6 +34,7 @@
     };
 
     rust-overlay.url = "github:oxalica/rust-overlay";
+    nur.url = github:nix-community/NUR;
   };
 
   outputs =
@@ -46,6 +47,7 @@
     , spicetify-nix
     , lanzaboote
     , rust-overlay
+    , nur
     , ...
     }@inputs: {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -62,12 +64,14 @@
         modules = [
           lanzaboote.nixosModules.lanzaboote
           ./hosts/nixos.nix
+          nur.nixosModules.nur
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useUserPackages = true;
               useGlobalPkgs = false;
               verbose = true;
+              backupFileExtension = "bak";
               extraSpecialArgs = { inherit inputs spicetify-nix nix-colors; };
               users.michael = ./home/michael/home.nix;
             };
