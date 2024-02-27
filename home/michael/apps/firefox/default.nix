@@ -115,6 +115,13 @@ in
         name = "Yes";
 
         extensions = shared-extensions;
+
+        settings = {
+          "browser.aboutConfig.showWarning" = false;
+          "browser.bookmarks.addedImportButton" = false;
+          # extensions.activeThemeID
+          "layout.css.prefers-color-scheme.content-override" = "dark";
+        };
       };
     };
   };
