@@ -15,7 +15,6 @@
     nix-colors.url = "github:misterio77/nix-colors";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
-    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
 
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
