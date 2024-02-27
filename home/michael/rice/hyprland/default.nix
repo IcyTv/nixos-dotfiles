@@ -30,7 +30,8 @@ in
       hyprctl setcursor "macOS-BigSur" 24 # "Catppuccin-Mocha-Mauve-Cursors"
 
       # Others
-      /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+      # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+      ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
       dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
     '')
   ];
