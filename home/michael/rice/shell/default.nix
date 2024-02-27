@@ -48,7 +48,7 @@
     enable = true;
     config = {
       pager = "less -FR";
-      theme = "Catppuccin-macchiato";
+      theme = "Catppuccin-mocha";
     };
     themes = let
       src = pkgs.fetchFromGitHub {
@@ -61,6 +61,10 @@
       Catppuccin-macchiato = {
         inherit src;
         file = "Catppuccin-macchiato.tmTheme";
+      };
+      Catppuccin-mocha = {
+        inherit src;
+        file = "Catppuccin-mocha.tmTheme";
       };
     };
   };
