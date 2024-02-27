@@ -67,6 +67,7 @@
             home-manager = {
               useUserPackages = true;
               useGlobalPkgs = false;
+              verbose = true;
               extraSpecialArgs = { inherit inputs spicetify-nix nix-colors; };
               users.michael = ./home/michael/home.nix;
             };
