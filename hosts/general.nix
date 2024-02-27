@@ -1,5 +1,5 @@
 
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, lanzaboote, ... }: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -48,13 +48,11 @@
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
         "cache.iog.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-        "mlabs.cachix.org-1:gStKdEqNKcrlSQw5iMW6wFCj3+b+1ASpBVY2SYuNV2M="
       ];
       substituters = [
         "https://cache.iog.io"
         "https://cache.nixos.org"
         "https://iohk.cachix.org"
-        "https://mlabs.cachix.org"
       ];
     };
   };
@@ -64,7 +62,7 @@
     supportedFilesystems = [ "ntfs" ];
     # Bootloader.
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot.enable = lib.mkForce false;
       systemd-boot.configurationLimit = 3;
       systemd-boot.editor = false;
 
@@ -74,6 +72,11 @@
     };
     # https://discourse.nixos.org/t/easy-refind-boot-by-booting-into-systemd-boot-from-refind/28507/5?u=zmrocze
     # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
   };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -177,10 +180,12 @@
     variables.EDITOR = "nvim";
 
     # this enabled `$ man alias`
-    systemPackages = [ 
-      pkgs.man-pages 
-      pkgs.man-pages-posix 
-      pkgs.git pkgs.neovim 
+    systemPackages = with pkgs; [ 
+      man-pages
+      man-pages-posix 
+      git 
+      neovim 
+      sbctl
       inputs.xdg-portal-hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland  
     ];
   };

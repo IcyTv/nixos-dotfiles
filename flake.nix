@@ -27,6 +27,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
   };
 
   outputs =
@@ -37,6 +42,7 @@
     , nix-colors
     , flake-parts
     , spicetify-nix
+    , lanzaboote
     , ...
     }@inputs: {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -51,6 +57,7 @@
         };
 
         modules = [
+          lanzaboote.nixosModules.lanzaboote
           ./hosts/nixos.nix
           home-manager.nixosModules.home-manager
           {
@@ -66,61 +73,4 @@
         ];
       };
     };
-
-  # outputs =
-  #   { self
-  #   , nixpkgs
-  #   , hyprland
-  #   , home-manager
-  #   , nix-colors
-  #   , flake-parts
-  #   , spicetify-nix
-  #   , ...
-  #   }@inputs:
-  #   let
-  #     system = "x86_64-linux";
-  #     hostname = "nixos";
-  #     username = "michael";
-  #     pkgsFor = system:
-  #       import inputs.nixpkgs {
-  #         inherit system;
-  #         config = {
-  #           permittedInsecurePackages = [ "electron-25.9.0" ];
-  #           allowUnfree = true;
-  #           allowUnfreePredicate = _: true;
-  #         };
-  #       };
-  #   in
-  #   flake-parts.lib.mkFlake { inherit inputs; } rec {
-  #     systems = [ system ];
-  #     perSystem = { config, pkgs, system, ... }: {
-  #       _module.args.pkgs = pkgsFor system;
-  #     };
-
-  #     flake = {
-  #       nixosConfigurations = {
-  #         "nixos" = inputs.nixpkgs.lib.nixosSystem {
-  #           specialArgs = {
-  #             inherit
-  #               inputs
-  #               hyprland
-  #               spicetify-nix
-  #               nix-colors
-  #               ;
-  #             mypkgs = pkgsFor system;
-  #           };
-  #           modules = [ ./hosts/nixos.nix ];
-  #         };
-  #       };
-
-  #       homeConfigurations = {
-  #         "${username}@${hostname}" =
-  #           home-manager.lib.homeManagerConfiguration {
-  #             pkgs = pkgsFor system;
-  #             extraSpecialArgs = { inherit inputs spicetify-nix nix-colors username; };
-  #             modules = [ (import ./home/${username}/home.nix) ];
-  #           };
-  #       };
-  #     };
-  #   };
 }
