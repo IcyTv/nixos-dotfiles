@@ -21,7 +21,7 @@
       disable_ligatures = "never";
 
       copy_on_select = "clipboard";
-      clear_all_shortcuts = true;
+      # clear_all_shortcuts = true;
       draw_minimal_borders = "yes";
       input_delay = 0;
       kitty_mod = "ctrl+shift";
