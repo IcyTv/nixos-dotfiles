@@ -4,10 +4,9 @@ set -e
 
 pushd ~/system-flake
 
-git diff
+git diff HEAD
 
 read -p "Continue (y/n)?" CONT
-echo
 if [[ ! "$CONT" =~ ^[Yy]$ ]]
 then
     exit 1
