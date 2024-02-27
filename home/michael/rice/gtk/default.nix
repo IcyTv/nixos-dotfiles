@@ -1,4 +1,11 @@
 { pkgs, ... }: {
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.apple-cursor;
+    name = "macOS-BigSur";
+    size = 24;
+  };
+
    gtk = {
     enable = true;
     cursorTheme = {
