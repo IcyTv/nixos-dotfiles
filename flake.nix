@@ -35,6 +35,16 @@
 
     rust-overlay.url = "github:oxalica/rust-overlay";
     nur.url = github:nix-community/NUR;
+
+    firefox-cascade = {
+      url = "https://github.com/cascadefox/cascade";
+      flake = false;
+    };
+
+    nyoom = {
+      url = "github:ryanccn/nyoom";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

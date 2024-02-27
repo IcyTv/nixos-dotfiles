@@ -37,6 +37,18 @@
         "type": "github"
       }
     },
+    "firefox-cascade": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-SVsYzo2flYlvnNKpnQcp0ZJ+QPTyjaGrpnt2Rnv4VP8=",
+        "type": "file",
+        "url": "https://github.com/cascadefox/cascade"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/cascadefox/cascade"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -623,6 +635,26 @@
         "type": "github"
       }
     },
+    "nyoom": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1707988561,
+        "narHash": "sha256-vjdOZkTuXv+8EXKyK+AzEW+E0oBKCncvLrmVL8LH4Jw=",
+        "owner": "ryanccn",
+        "repo": "nyoom",
+        "rev": "900a5b650805943e8552d799577f66f50e328aeb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryanccn",
+        "repo": "nyoom",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -678,6 +710,7 @@
     },
     "root": {
       "inputs": {
+        "firefox-cascade": "firefox-cascade",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
@@ -686,6 +719,7 @@
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_3",
         "nur": "nur",
+        "nyoom": "nyoom",
         "pre-commit-hooks": "pre-commit-hooks",
         "rust-overlay": "rust-overlay_2",
         "spicetify-nix": "spicetify-nix",

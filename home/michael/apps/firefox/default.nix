@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 let
   ycs = pkgs.nur.repos.rycee.firefox-addons.buildFirefoxXpiAddon rec {
     pname = "ycs";
@@ -29,8 +29,13 @@ let
     ];
 
   # TODO gemini for google & optisearch
+
 in
 {
+  imports = [
+    ./chrome.nix
+  ];
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox.override {
