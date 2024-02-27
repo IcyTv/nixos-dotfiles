@@ -66,6 +66,7 @@
     loader = {
       systemd-boot.enable = true;
       systemd-boot.configurationLimit = 3;
+      systemd-boot.editor = false;
 
       efi.canTouchEfiVariables = true;
       # boot immedietely into latest generation. To bypass press shift while booting into systemd
