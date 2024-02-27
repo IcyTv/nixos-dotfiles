@@ -30,16 +30,16 @@
         sha256 = "0q9wg8jlhlz2xn08rdml6fljglqd1a2gbdp063c8b8ay24zz2w9x";
       };
     }
-    {
-      name = "fzf-tab";
-      file = "fzf-tab.plugin.zsh";
-      src = fetchFromGitHub {
-        owner = "Aloxaf";
-        repo = "fzf-tab";
-        rev = "5a81e13792a1eed4a03d2083771ee6e5b616b9ab";
-        sha256 = "0lfl4r44ci0wflfzlzzxncrb3frnwzghll8p365ypfl0n04bkxvl";
-      };
-    }
+    # {
+    #   name = "fzf-tab";
+    #   file = "fzf-tab.plugin.zsh";
+    #   src = fetchFromGitHub {
+    #     owner = "Aloxaf";
+    #     repo = "fzf-tab";
+    #     rev = "5a81e13792a1eed4a03d2083771ee6e5b616b9ab";
+    #     sha256 = "0lfl4r44ci0wflfzlzzxncrb3frnwzghll8p365ypfl0n04bkxvl";
+    #   };
+    # }
     {
       name = "ctp-zsh-syntax-highlighting";
       file = "themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh";
