@@ -52,16 +52,16 @@ in
       DisplayBookmarksToolbar = "always";
       DisplayMenuBar = "default-off";
 
-      ExtensionSettings = {
-        "gmail_panel@alejandrobrizuela.com.ar" = {
-          installation_mode = "normal_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/file/4132394/pinned_gmail-2.4.0.xpi";
-        };
-        "{1f09eef6-bc49-4f11-b4f2-da2705b2f8b4}" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/file/4013533/ycs-1.1.12.xpi";
-        };
-      };
+      # ExtensionSettings = {
+      #   "gmail_panel@alejandrobrizuela.com.ar" = {
+      #     installation_mode = "normal_installed";
+      #     install_url = "https://addons.mozilla.org/firefox/downloads/file/4132394/pinned_gmail-2.4.0.xpi";
+      #   };
+      #   "{1f09eef6-bc49-4f11-b4f2-da2705b2f8b4}" = {
+      #     installation_mode = "force_installed";
+      #     install_url = "https://addons.mozilla.org/firefox/downloads/file/4013533/ycs-1.1.12.xpi";
+      #   };
+      # };
     };
 
     profiles = {
