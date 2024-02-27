@@ -187,8 +187,6 @@
     variables.EDITOR = "nvim";
     sessionVariables.NIXOS_OZONE_WL = "1";
 
-    binsh = "${pkgs.dash}/bin/dash";
-
     # this enabled `$ man alias`
     systemPackages = with pkgs; [ 
       man-pages
