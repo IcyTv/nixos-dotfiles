@@ -102,6 +102,10 @@ in
           ycs
           pinned-gmail
         ];
+
+        settings = {
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        };
       };
 
       yes = {
