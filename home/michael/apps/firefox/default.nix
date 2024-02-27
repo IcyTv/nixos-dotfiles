@@ -66,33 +66,33 @@ in
         name = "NixOS";
         isDefault = true;
 
-        # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        #   ublock-origin
-        #   privacy-badger
-        #   bypass-paywalls-clean
-        #   profile-switcher
-        #   bitwarden
-        #   duckduckgo-privacy-essentials
-        #   flagfox
-        #   languagetool
-        #   onetab
-        #   return-youtube-dislikes
-        #   scroll_anywhere
-        #   sponsorblock
-        #   tabliss
-        #   translate-web-pages
-        #   unpaywall
-        #   playback-speed
-        #   web-archives
-        #   rust-search-extension
-        #   wikiwand-wikipedia-modernized
-        #   buster-captcha-solver
-        #   decentraleyes
-        #   link-cleaner
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          privacy-badger
+          bypass-paywalls-clean
+          profile-switcher
+          bitwarden
+          duckduckgo-privacy-essentials
+          flagfox
+          languagetool
+          onetab
+          return-youtube-dislikes
+          scroll_anywhere
+          sponsorblock
+          tabliss
+          translate-web-pages
+          unpaywall
+          playback-speed
+          web-archives
+          rust-search-extension
+          wikiwand-wikipedia-modernized
+          buster-captcha-solver
+          decentraleyes
+          link-cleaner
 
-        #   ycs
-        #   pinned-gmail
-        # ];
+          ycs
+          pinned-gmail
+        ];
       };
 
       yes = {
