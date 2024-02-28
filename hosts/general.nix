@@ -86,6 +86,10 @@
         timeout = 10;
       };
     };
+
+    kernelParams = [
+      "btusb.enable_autosuspend=n"
+    ];
   };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
