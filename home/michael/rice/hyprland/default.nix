@@ -51,9 +51,9 @@ in
       "$menu" = "wofi";
 
       monitor = [
-        "HDMI-0,preferred,4480x348,1"
+        "HDMI-A-1,preferred,4480x348,1"
         "DP-2,2560x1440@144,1920x108,1"
-        "DP-3,preferred,0x0,1"
+        "DP-1,preferred,0x0,1"
       ];
 
       exec-once = [
@@ -180,16 +180,16 @@ in
       workspace = [
         "1, monitor:HDMI-A-1"
         "2, monitor:DP-2"
-        "3, monitor:DP-3"
+        "3, monitor:DP-1"
         "4, monitor:HDMI-A-1"
         "5, monitor:DP-2"
-        "6, monitor:DP-3"
+        "6, monitor:DP-1"
         "7, monitor:HDMI-A-1"
         "8, monitor:DP-2"
-        "9, monitor:DP-3"
+        "9, monitor:DP-1"
         "10, monitor:HDMI-A-1"
         "11, monitor:DP-2"
-        "12, monitor:DP-3"
+        "12, monitor:DP-1"
       ];
     };
   };
