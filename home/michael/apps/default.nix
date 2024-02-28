@@ -8,6 +8,7 @@
     ./git.nix
     ./thunar.nix
     ./github.nix
+    ./cli.nix
   ];
 
   home.packages = with pkgs; [
