@@ -151,8 +151,10 @@
         };
       };
       # Configure keymap in X11
-      layout = "us";
-      xkbVariant = "altgr-intl";
+      xkb = {
+        layout = "us";
+        variant = "altgr-intl";
+      };
     };
 
     printing.enable = true;
