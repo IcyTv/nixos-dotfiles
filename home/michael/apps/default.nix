@@ -27,5 +27,11 @@
     provider = "manual";
     latitude = 49.0;
     longitude = 8.4;
+    tray = true;
+    settings = {
+      general = {
+        adjustment-method = "wayland";
+      };
+    };
   };
 }
