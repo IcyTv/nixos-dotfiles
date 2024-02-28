@@ -21,6 +21,7 @@
     polkit_gnome
     sbctl
     wl-clipboard
+    pkgs.gnome.gnome-clocks
   ];
 
   services.gammastep = {
