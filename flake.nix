@@ -77,7 +77,7 @@
               useUserPackages = true;
               useGlobalPkgs = false;
               verbose = true;
-              backupFileExtension = "bak";
+              backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs spicetify-nix nix-colors; };
               users.michael = ./home/michael/home.nix;
             };

@@ -193,7 +193,7 @@ in
 
           "My NixOS" = {
             urls = [{ template = "https://mynixos.com/search?q={searchTerms}"; }];
-            iconUpdateUrl = "https://mynixos.com/favicon.ico";
+            iconUpdateUrl = "https://mynixos.com/favicon-32x32.png";
             updateInterval = 24 * 60 * 60 * 1000 * 30; # every month
             definedAliases = [ "@nix" "@opts" ];
           };
