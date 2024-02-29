@@ -196,6 +196,13 @@
     # services.flatpak.enable = true;
     # services.accounts-daemon.enable = true;
 
+    locate = {
+      enable = true;
+      package = pkgs.plocate;
+      interval = "hourly";
+      localuser = null;
+    };
+
   };
 
   environment = {

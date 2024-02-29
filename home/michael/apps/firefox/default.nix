@@ -32,6 +32,15 @@ let
 
 in
 {
+  home.packages = with pkgs; [
+    (makeDesktopItem {
+      name = "firefox-yes";
+      desktopName = "Firefox (Yes)";
+      icon = "${pkgs.firefox}/share/icons/hicolor/128x128/apps/firefox.png";
+      exec = "${pkgs.firefox}/bin/firefox -p Yes";
+    })
+  ];
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox.override {

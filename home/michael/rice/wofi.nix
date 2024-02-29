@@ -34,7 +34,7 @@
           border: 5px solid #181926;
           border-radius: 15px;
           background-color: rgba(24, 25, 38, 1);
-          font-family: "MonoLisa", "Font Awesome 6 Free Solid";
+          font-family: "JetBrainsMono Nerd Font";
           font-size: 12px;
         }
 
@@ -179,11 +179,11 @@
     };
     "wofi/themes/catppuccin-macchiato.css" = {
       text = ''
-            window {
+        window {
           margin: 0px;
           border: 5px solid #181926;
           background-color: rgba(24, 25, 38, 1.0);
-          font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free Solid";
+          font-family: "JetBrainsMono Nerd Font";
           font-size: 13px;
         }
 
@@ -270,7 +270,7 @@
             margin: 0px;
             border: 5px solid #ebdbb2;
             background-color: #282828;
-            font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free Solid";
+            font-family: "JetBrainsMono Nerd Font";
             font-size: 13px;
           }
 
