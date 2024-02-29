@@ -177,6 +177,7 @@ in
 
         settings = sharedSettings;
 
+        search.default = "Google";
         search.engines = {
           "Nix Packages" = {
             urls = [{
@@ -210,6 +211,8 @@ in
         extensions = shared-extensions;
 
         settings = sharedSettings;
+
+        search.default = "Google";
       };
     };
   };
