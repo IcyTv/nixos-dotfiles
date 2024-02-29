@@ -73,4 +73,6 @@
   };
 
   environment.etc."gbm/nvidia-drm_gbm.so".source = "${config.boot.kernelPackages.nvidiaPackages.stable}/lib/libnvidia-allocator.so";
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 }
