@@ -18,6 +18,15 @@ let
 
     meta = { };
   };
+  catppuccin-macchiato-blue = pkgs.nur.repos.rycee.firefox-addons.buildFirefoxXpiAddon rec {
+    pname = "catppuccin-macchiato-blue";
+    version = "2.0";
+    addonId = "{d49033ac-8969-488c-afb0-5cdb73957f41}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3989615/catppuccin_macchiato_blue-${version}.xpi";
+    sha256 = "sha256-VnNqTCaa/qlIz/SPoB8bYe3+5ggi9w3aZDDS1KCmIqw=";
+
+    meta = { };
+  };
 
   shared-extensions = with pkgs.nur.repos.rycee.firefox-addons;
     [
@@ -26,6 +35,7 @@ let
       decentraleyes
       translate-web-pages
       i-dont-care-about-cookies
+      catppuccin-macchiato-blue
     ];
 
   # TODO gemini for google & optisearch
@@ -59,7 +69,7 @@ let
 
     "browser.aboutConfig.showWarning" = false;
     "browser.bookmarks.addedImportButton" = false;
-    # extensions.activeThemeID
+    "extensions.activeThemeID" = catppuccin-macchiato-blue.addonId; 
     "layout.css.prefers-color-scheme.content-override" = "dark";
     # "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
     "svg.context-properties.content.enabled" = true;
@@ -152,8 +162,6 @@ in
         isDefault = true;
 
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
-          privacy-badger
           bypass-paywalls-clean
           bitwarden
           duckduckgo-privacy-essentials
@@ -164,21 +172,17 @@ in
           scroll_anywhere
           sponsorblock
           tabliss
-          translate-web-pages
           unpaywall
           playback-speed
           web-archives
           rust-search-extension
           wikiwand-wikipedia-modernized
           buster-captcha-solver
-          decentraleyes
           link-cleaner
-          i-dont-care-about-cookies
-          firefox-color
 
           ycs
           pinned-gmail
-        ];
+        ] ++ shared-extensions;
 
         settings = sharedSettings;
 
