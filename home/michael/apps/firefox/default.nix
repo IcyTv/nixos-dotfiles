@@ -28,6 +28,10 @@ let
     meta = { };
   };
 
+  home.activation.enableFirefoxAddons = lib.hm.dag.entryAfter ["installPackages"] ''
+  echo Here
+  '';
+
   shared-extensions = with pkgs.nur.repos.rycee.firefox-addons;
     [
       ublock-origin
@@ -122,6 +126,7 @@ in
 
   programs.firefox = {
     enable = true;
+    # package = pkgs.firefox;
     package = pkgs.firefox;
 
     policies = {
