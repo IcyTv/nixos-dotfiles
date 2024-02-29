@@ -71,4 +71,6 @@
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  environment.etc."gbm/nvidia-drm_gbm.so".source = "${config.boot.kernelPackages.nvidiaPackages.stable}/lib/libnvidia-allocator.so";
 }
