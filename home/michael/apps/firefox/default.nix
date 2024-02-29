@@ -93,6 +93,10 @@ let
     "security.webauth.webauthn" = true;
     "security.webauth.webauthn_enable_softtoken" = true;
     "security.webauth.webauthn_enable_usbtoken" = true;
+
+    "browser.translations.enable" = true;
+    "browser.translations.alwaysTranslateLanguages" = "ru-RU";
+    "browser.translations.neverTranslateLanguages" = "en-US,de-DE";
   };
 
 in

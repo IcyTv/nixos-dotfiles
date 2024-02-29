@@ -14,6 +14,7 @@ fi
 
 git add .
 sudo nixos-rebuild switch --flake $PWD
+nix run .#home-manager -- switch --flake .#michael
 gen=$(nixos-rebuild list-generations | grep current | awk '{print $1}')
 git commit -am "Generation $gen"
 git commit --amend
