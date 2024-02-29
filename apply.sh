@@ -18,6 +18,6 @@ gen=$(nixos-rebuild list-generations | grep current | awk '{print $1}')
 git commit -am "Generation $gen"
 git commit --amend
 
-git push
+# git push
 
 popd
