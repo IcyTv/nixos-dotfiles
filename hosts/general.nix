@@ -201,6 +201,10 @@
       package = pkgs.plocate;
       interval = "hourly";
       localuser = null;
+
+      prunePaths = [
+        "/mnt/windows" # Don't search windows partition (for now)
+      ];
     };
 
   };
