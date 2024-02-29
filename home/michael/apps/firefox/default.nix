@@ -170,6 +170,7 @@ in
           decentraleyes
           link-cleaner
           i-dont-care-about-cookies
+          firefox-color
 
           ycs
           pinned-gmail
