@@ -23,7 +23,6 @@ let
     [
       ublock-origin
       privacy-badger
-      profile-switcher
       decentraleyes
       translate-web-pages
     ];
@@ -43,11 +42,7 @@ in
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox.override {
-      nativeMessagingHosts = [
-        (pkgs.callPackage ./profile-switcher.nix { })
-      ];
-    };
+    package = pkgs.firefox;
 
     policies = {
       DisableTelemetry = true;
@@ -85,7 +80,6 @@ in
           ublock-origin
           privacy-badger
           bypass-paywalls-clean
-          profile-switcher
           bitwarden
           duckduckgo-privacy-essentials
           flagfox
