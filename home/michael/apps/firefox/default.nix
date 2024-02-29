@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, ... }:
+{ inputs, pkgs, lib, hm, ... }:
 let
   ycs = pkgs.nur.repos.rycee.firefox-addons.buildFirefoxXpiAddon rec {
     pname = "ycs";
@@ -27,10 +27,15 @@ let
 
     meta = { };
   };
+  global-speed = pkgs.nur.repos.rycee.firefox-addons.buildFirefoxXpiAddon rec {
+    pname = "global-speed";
+    version = "2.9.9971";
+    addonId = "{f4961478-ac79-4a18-87e9-d2fb8c0442c4}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4193461/global_speed-${version}.xpi";
+    sha256 = "sha256-mhjwp7NWYH43oyFXiHO7J3sKny89k3gFuOSxEAGSWSo=";
 
-  home.activation.enableFirefoxAddons = lib.hm.dag.entryAfter ["installPackages"] ''
-  echo Here
-  '';
+    meta = {};
+  };
 
   shared-extensions = with pkgs.nur.repos.rycee.firefox-addons;
     [
@@ -187,6 +192,7 @@ in
 
           ycs
           pinned-gmail
+          global-speed
         ] ++ shared-extensions;
 
         settings = sharedSettings;
