@@ -39,4 +39,6 @@ in
     "gtk-4.0/gtk.css".source = "${catppuccin}/share/themes/${theme}/gtk-4.0/gtk.css";
     "gtk-4.0/gtk-dark.css".source = "${catppuccin}/share/themes/${theme}/gtk-4.0/gtk-dark.css";
   };
+
+  home.sessionVariables.GTK_THEME = theme;
 }

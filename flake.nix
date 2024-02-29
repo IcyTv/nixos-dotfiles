@@ -55,7 +55,19 @@
     , rust-overlay
     , nur
     , ...
-    }@inputs: {
+    }@inputs: let 
+      pkgsForSystem = system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      mkHomeConfiguration = args: home-manager.lib.homeManagerConfiguration (rec {
+        modules = [ 
+          (import ./home/michael/home.nix)
+        ] ++ (args.modules or []);
+        pkgs = pkgsForSystem (args.system or "x86_64-linux");
+      } // { inherit (args) extraSpecialArgs; });
+    in{
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
@@ -71,20 +83,27 @@
           lanzaboote.nixosModules.lanzaboote
           ./hosts/nixos.nix
           nur.nixosModules.nur
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useUserPackages = true;
-              useGlobalPkgs = false;
-              verbose = true;
-              backupFileExtension = "bak";
-              extraSpecialArgs = { inherit inputs spicetify-nix nix-colors; };
-              users.michael = ./home/michael/home.nix;
-            };
-          }
           hyprland.nixosModules.default
           { programs.hyprland.enable = true; }
+          # home-manager.nixosModules.home-manager
+          # {
+          #   home-manager = {
+          #     useUserPackages = true;
+          #     useGlobalPkgs = false;
+          #     verbose = true;
+          #     backupFileExtension = "bak";
+          #     extraSpecialArgs = { inherit inputs spicetify-nix nix-colors; };
+          #     users.michael = ./home/michael/home.nix;
+          #   };
+          # }
         ];
       };
+
+      homeConfigurations.michael = mkHomeConfiguration {
+        extraSpecialArgs = { inherit inputs spicetify-nix nix-colors; };
+      };
+
+      inherit home-manager;
+      inherit (home-manager) packages;
     };
 }
