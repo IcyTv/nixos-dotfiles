@@ -204,6 +204,16 @@
 
       prunePaths = [
         "/mnt/windows" # Don't search windows partition (for now)
+
+        # Default exclusion paths
+        "/tmp"
+        "/var/tmp"
+        "/var/cache"
+        "/var/lock"
+        "/var/run"
+        "/var/spool"
+        "/nix/store"
+        "/nix/var/log/nix"
       ];
     };
 
