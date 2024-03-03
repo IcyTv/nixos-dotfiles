@@ -10,6 +10,7 @@
   };
 
   imports = [
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     ./themes
     ./rice
     ./apps
@@ -22,7 +23,8 @@
     };
     overlays = [ 
       inputs.rust-overlay.overlays.default
-      inputs.nur.overlay  
+      inputs.nur.overlay
+      # inputs.prismlauncher.overlays.default
     ];
   };
 

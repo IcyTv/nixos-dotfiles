@@ -53,7 +53,7 @@ in
       monitor = [
         "HDMI-A-1,preferred,4480x348,1"
         "DP-2,2560x1440@144,1920x108,1"
-        "DP-1,preferred,0x0,1"
+        "DP-3,preferred,0x0,1"
       ];
 
       exec-once = [
@@ -142,6 +142,7 @@ in
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, R, exec, $menu"
         "$mainMod, E, exec, $fileManager"
+        "$mainMod, F, fullscreen, 0"
 
         "$mainMod, M, fullscreen, 1"
         
@@ -180,16 +181,16 @@ in
       workspace = [
         "1, monitor:HDMI-A-1"
         "2, monitor:DP-2"
-        "3, monitor:DP-1"
+        "3, monitor:DP-3"
         "4, monitor:HDMI-A-1"
         "5, monitor:DP-2"
-        "6, monitor:DP-1"
+        "6, monitor:DP-3"
         "7, monitor:HDMI-A-1"
         "8, monitor:DP-2"
-        "9, monitor:DP-1"
+        "9, monitor:DP-3"
         "10, monitor:HDMI-A-1"
         "11, monitor:DP-2"
-        "12, monitor:DP-1"
+        "12, monitor:DP-3"
       ];
     };
   };

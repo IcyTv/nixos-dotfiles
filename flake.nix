@@ -41,19 +41,22 @@
       url = "github:ryanccn/nyoom";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =
     { self
     , nixpkgs
-    , hyprland
     , home-manager
-    , nix-colors
     , flake-parts
-    , spicetify-nix
+    , hyprland
     , lanzaboote
-    , rust-overlay
+    , nix-colors
+    , nix-flatpak
     , nur
+    , rust-overlay
+    , spicetify-nix
     , ...
     }@inputs: let 
       pkgsForSystem = system: import nixpkgs {
@@ -80,6 +83,7 @@
         };
 
         modules = [
+          nix-flatpak.nixosModules.nix-flatpak
           lanzaboote.nixosModules.lanzaboote
           ./hosts/nixos.nix
           nur.nixosModules.nur

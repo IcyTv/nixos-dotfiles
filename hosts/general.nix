@@ -52,6 +52,7 @@
         "cache.iog.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       ];
       substituters = [
         "https://cache.iog.io"
@@ -59,6 +60,7 @@
         "https://iohk.cachix.org"
         "https://hyprland.cachix.org"
         "https://nix-community.cachix.org"
+        "https://cache.garnix.io"
       ];
     };
   };
@@ -173,6 +175,7 @@
     };
 
     printing.enable = true;
+    flatpak.enable = true;
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
@@ -260,6 +263,22 @@
       enable = true;
       setSocketVariable = true;
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      (pkgs.xdg-desktop-portal-gtk.override {
+        # Do not build portals that we already have.
+        buildPortalsInGnome = false;
+      })
+    ];
+  };
+
+  systemd.user.services.xdg-desktop-portal-gtk = {
+    wantedBy = [ "xdg-desktop-portal.service" ];
+    before = [ "xdg-desktop-portal.service" ];
   };
 
   # security.doas.enable = true;

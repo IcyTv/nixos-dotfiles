@@ -114,8 +114,8 @@ let
     "security.webauth.webauthn_enable_usbtoken" = true;
 
     "browser.translations.enable" = true;
-    "browser.translations.alwaysTranslateLanguages" = "ru-RU";
-    "browser.translations.neverTranslateLanguages" = "en-US,de-DE";
+    "browser.translations.alwaysTranslateLanguages" = "ru-RU,ru";
+    "browser.translations.neverTranslateLanguages" = "en-US,de-DE,de";
   };
 
 in
@@ -183,7 +183,6 @@ in
           sponsorblock
           tabliss
           unpaywall
-          playback-speed
           web-archives
           rust-search-extension
           wikiwand-wikipedia-modernized

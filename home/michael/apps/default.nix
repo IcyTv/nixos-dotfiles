@@ -10,6 +10,7 @@
     ./github.nix
     ./cli.nix
     ./uni.nix
+    ./games
   ];
 
   home.packages = with pkgs; [
@@ -23,6 +24,7 @@
     sbctl
     wl-clipboard
     pkgs.gnome.gnome-clocks
+    whatsapp-for-linux
   ];
 
   services.gammastep = {
