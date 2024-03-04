@@ -238,6 +238,7 @@
       neovim 
       sbctl
       inputs.xdg-portal-hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland  
+      openrgb
     ];
   };
 

@@ -25,6 +25,7 @@
     wl-clipboard
     pkgs.gnome.gnome-clocks
     whatsapp-for-linux
+    skypeforlinux
   ];
 
   services.gammastep = {
@@ -51,4 +52,8 @@
       };
     };
   };
+
+  services.flatpak.packages = [
+    "io.github.mimbrero.WhatsAppDesktop"
+  ];
 }
